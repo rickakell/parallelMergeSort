@@ -16,7 +16,7 @@ using std::istringstream;
 using std::cerr;
 
 template <typename T>
-void storeCommandLineArgument(const char* & commandLineArgument, T variableToStoreIn);
+void storeCommandLineArgument(const char* & commandLineArgument, T & variableToStoreIn);
 
 #include "main.hpp"
 

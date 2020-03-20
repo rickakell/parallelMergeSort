@@ -13,16 +13,20 @@ int main(int argc, char** argv)
     {
         case 5:
             storeCommandLineArgument(argv[4], randomNumberMaximum);
+            // fall through
         case 4:
             storeCommandLineArgument(argv[3], randomNumberMinimum);
+            // fall through
         case 3:
             storeCommandLineArgument(argv[2], maxThreads);
+            // fall through
         case 2:
             storeCommandLineArgument(argv[1], arraySize);
+            // fall through
         case 1:
             break;
         default:
-            cout << "Wrong" << endl;
+            cout << "Usage:\n./sort [arraySize] [maxThreads] [randomNumberMaximum] [randomNumberMinimum]" << endl;
             return 1;
             break;
     }
