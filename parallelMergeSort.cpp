@@ -1,8 +1,15 @@
 #include "parallelMergeSort.h"
 
+#include <iostream>
+#include <cstdlib>
+
+using std::cout;
+using std::endl;
+
 void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
                             const unsigned long & rightIndex, const unsigned long maxThreads)
 {
+    cout << maxThreads << endl;
     if(leftIndex < rightIndex)
     {
         unsigned long halfArrayIndex = leftIndex + (rightIndex - leftIndex) / 2;

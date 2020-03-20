@@ -1,11 +1,10 @@
 #include "mergeSort.h"
 
-void sequentialMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                            const unsigned long & rightIndex)
+void sequentialMergeSort(long* arrayOfNumbers, const long & leftIndex, const long & rightIndex)
 {
     if(leftIndex < rightIndex)
     {
-        unsigned long halfArrayIndex = leftIndex + (rightIndex - leftIndex) / 2;
+        long halfArrayIndex = leftIndex + (rightIndex - leftIndex) / 2;
 
         sequentialMergeSort(arrayOfNumbers, leftIndex, halfArrayIndex);
         sequentialMergeSort(arrayOfNumbers, (halfArrayIndex + 1), rightIndex);
@@ -15,16 +14,15 @@ void sequentialMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex,
     return;
 }
 
-void sequentialMerge(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                        const unsigned long & halfArrayIndex, const unsigned long & rightIndex)
+void sequentialMerge(long* arrayOfNumbers, const long & leftIndex, const long & halfArrayIndex, const long & rightIndex)
 {
-    const unsigned long leftSubArraySize = halfArrayIndex - leftIndex + 1;
-    const unsigned long rightSubArraySize = rightIndex - halfArrayIndex;
+    long i, j, k;
+    const long leftSubArraySize = halfArrayIndex - leftIndex + 1;
+    const long rightSubArraySize = rightIndex - halfArrayIndex;
 
     long* leftSubArray = new long[leftSubArraySize];
     long* rightSubArray = new long[rightSubArraySize];
 
-    unsigned long i;
     for(i = 0; i < leftSubArraySize; ++i)
     {
         leftSubArray[i] = arrayOfNumbers[leftIndex + i];
@@ -35,8 +33,8 @@ void sequentialMerge(long* arrayOfNumbers, const unsigned long & leftIndex,
         rightSubArray[i] = arrayOfNumbers[halfArrayIndex + 1 + i];
     }
 
-    unsigned long j = 0;
-    unsigned long k = leftIndex;
+    i = j = 0;
+    k = leftIndex;
     while(i < leftSubArraySize && j < rightSubArraySize)
     {
         if(leftSubArray[i] <= rightSubArray[j])
@@ -64,4 +62,4 @@ void sequentialMerge(long* arrayOfNumbers, const unsigned long & leftIndex,
     delete[] rightSubArray;
 
     return;
-}
+} 
