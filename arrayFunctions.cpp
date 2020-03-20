@@ -1,6 +1,6 @@
 #include "arrayFunctions.h"
 
-void fillTestArrays(long* emptyArray, const unsigned long & size, const long minRandomNum, const long maxRandomNum)
+void fillTestArrays(long* emptyArray, const unsigned long size, const long minRandomNum, const long maxRandomNum)
 {
     for(unsigned long i = 0; i < size; ++i)
     {
@@ -9,7 +9,7 @@ void fillTestArrays(long* emptyArray, const unsigned long & size, const long min
     return;
 }
 
-void printArray(long* array, const unsigned long & size)
+void printArray(long* array, const unsigned long size)
 {
     for(unsigned long i = 0; i < size; ++i)
     {
@@ -19,7 +19,7 @@ void printArray(long* array, const unsigned long & size)
     return;
 }
 
-bool arrayIsSorted(long* array, const unsigned long & size)
+bool arrayIsSorted(long* array, const unsigned long size)
 {
     bool sorted = true;
     for(unsigned long i = 0; i < size - 1; ++i)

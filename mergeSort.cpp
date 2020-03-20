@@ -1,6 +1,6 @@
 #include "mergeSort.h"
 
-void sequentialMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, const unsigned long & rightIndex)
+void sequentialMergeSort(long* arrayOfNumbers, const unsigned long leftIndex, const unsigned long rightIndex)
 {
     if(leftIndex < rightIndex)
     {
@@ -14,8 +14,8 @@ void sequentialMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
     return;
 }
 
-void sequentialMerge(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                        const unsigned long & halfArrayIndex, const unsigned long & rightIndex)
+void sequentialMerge(long* arrayOfNumbers, const unsigned long leftIndex, 
+                        const unsigned long halfArrayIndex, const unsigned long rightIndex)
 {
     unsigned long i, j, k;
     const unsigned long leftSubArraySize = halfArrayIndex - leftIndex + 1;

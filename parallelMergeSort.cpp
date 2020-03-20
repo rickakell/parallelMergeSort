@@ -6,8 +6,8 @@
 using std::cout;
 using std::endl;
 
-void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                            const unsigned long & rightIndex, const unsigned long maxThreads)
+void parallelMergeSort(long* arrayOfNumbers, const unsigned long leftIndex, 
+                            const unsigned long rightIndex, const unsigned long maxThreads)
 {
     if(leftIndex < rightIndex)
     {

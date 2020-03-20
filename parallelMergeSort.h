@@ -7,11 +7,11 @@
 
 using std::thread;
 
-void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                            const unsigned long & rightIndex, const unsigned long maxThreads = 0);
+void parallelMergeSort(long* arrayOfNumbers, const unsigned long leftIndex, 
+                            const unsigned long rightIndex, const unsigned long maxThreads = 0);
 
-void parallelMergeSortHelper(long* arrayOfNumbers, const unsigned long & leftIndex, 
-                                const unsigned long & rightIndex);
+void parallelMergeSortHelper(long* arrayOfNumbers, const unsigned long leftIndex, 
+                                const unsigned long rightIndex);
 
 unsigned long determineMaxThreads(const unsigned long arraySize);
 

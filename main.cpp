@@ -1,37 +1,48 @@
-#include "parallelMergeSort.h"
-#include "arrayFunctions.h"
+#include "main.h"
 
-#include <ctime>
-#include <chrono>
-
-using std::chrono::high_resolution_clock;
-using std::chrono::duration;
-
-int main()
+int main(int argc, char** argv)
 {
+    // Set default values
+    unsigned long arraySize = 1000000;
+    unsigned long maxThreads = numeric_limits<unsigned long>::max();
+    long randomNumberMinimum = -100000;
+    long randomNumberMaximum = 100000;
+
+    // Overwrite each value that was passed in
+    switch (argc)
+    {
+        case 5:
+            storeCommandLineArgument(argv[4], randomNumberMaximum);
+        case 4:
+            storeCommandLineArgument(argv[3], randomNumberMinimum);
+        case 3:
+            storeCommandLineArgument(argv[2], maxThreads);
+        case 2:
+            storeCommandLineArgument(argv[1], arraySize);
+        case 1:
+            break;
+        default:
+            cout << "Wrong" << endl;
+            return 1;
+            break;
+    }
+
+    if(maxThreads == numeric_limits<unsigned long>::max())
+    {
+        maxThreads = determineMaxThreads(arraySize);
+    } 
+
     srand(time(NULL));
 
-    const unsigned long LONGMAXSIZE = 350000000;
+    long* longArray = new long[arraySize]; // larger than ~1,000,000 will overflow the stack
 
-    const long RANDOMNUMBERMINIMUM = -10000;
-    const long RANDOMNUMBERMAXIMUM = 10000;
-
-    // used to convert to seconds
-    const unsigned long CONVERSIONFACTOR = 1000000000;
-
-    //unsigned long numberOfHardwareThreadsAvailable = thread::hardware_concurrency();
-
-    unsigned long maxThreads = determineMaxThreads(LONGMAXSIZE);
-
-    long* longArray = new long[LONGMAXSIZE]; // larger than ~1,000,000 will overflow the stack
-
-    fillTestArrays(longArray, LONGMAXSIZE, RANDOMNUMBERMINIMUM, RANDOMNUMBERMAXIMUM);
+    fillTestArrays(longArray, arraySize, randomNumberMinimum, randomNumberMaximum);
     
     auto start = high_resolution_clock::now();
-    parallelMergeSort(longArray, 0, LONGMAXSIZE - 1, maxThreads);
+    parallelMergeSort(longArray, 0, arraySize - 1, maxThreads);
     auto end = high_resolution_clock::now();
 
-    auto runTime = (end - start) / CONVERSIONFACTOR;
+    duration<double> runTime = (end - start);
     cout << runTime.count() << 's' << endl;
     cout << runTime.count() / 60 << 'm' << endl;
 
