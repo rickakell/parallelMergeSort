@@ -1,3 +1,12 @@
+/*
+ * Author: Richard A. Kell
+ * File: main.cpp
+ * Date: Friday, March 20, 2020
+ * Class: CS 5802 Parallel Programming and Algorithms
+ * Instructor : Michael Gosnell
+ * Description: Driver file for parallel merge sort
+ */
+
 #include "main.h"
 
 int main(int argc, char** argv)
@@ -31,6 +40,7 @@ int main(int argc, char** argv)
             break;
     }
 
+    // use function to determine a reasonable number of threads based on the size of the array
     if(maxThreads == numeric_limits<unsigned long>::max())
     {
         maxThreads = determineMaxThreads(arraySize);
@@ -38,14 +48,17 @@ int main(int argc, char** argv)
 
     srand(time(NULL));
 
-    long* longArray = new long[arraySize]; // larger than ~1,000,000 will overflow the stack
+    // create a dynamic array to avoid overflowing the stack
+    long* longArray = new long[arraySize];
 
     fillTestArrays(longArray, arraySize, randomNumberMinimum, randomNumberMaximum);
     
+    // timing
     auto start = high_resolution_clock::now();
     parallelMergeSort(longArray, 0, arraySize - 1, maxThreads);
     auto end = high_resolution_clock::now();
 
+    // output
     duration<double> runTime = (end - start);
     cout << runTime.count() << 's' << endl;
     cout << runTime.count() / 60 << 'm' << endl;
