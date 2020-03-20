@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: parallelMergeSort.cpp
+ * Description: Implementation file for functions relating to parallel merge sort
+ */
+
 #include "parallelMergeSort.h"
 
 #include <iostream>

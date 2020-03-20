@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: arrayFunctions.cpp
+ * Description: Implementation file for array helper functions
+ */
+
 #include "arrayFunctions.h"
 
 void fillTestArrays(long* emptyArray, const unsigned long size, const long minRandomNum, const long maxRandomNum)

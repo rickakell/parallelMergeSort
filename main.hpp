@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: main.hpp
+ * Description: template function implementation for taking in command line arguments
+ */
+
 #include <typeinfo>
 
 template <typename T>

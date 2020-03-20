@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: arrayFunctions.h
+ * Description: Prototypes for array helper functions
+ */
+
 #ifndef ARRAYFUNCTIONS_H
 #define ARRAYFUNCTIONS_H
 

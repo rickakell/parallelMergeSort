@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: mergeSort.h
+ * Description: Function prototypes for merge sort algorithm
+ */
+
 #ifndef MERGESORT_H
 #define MERGESORT_H
 

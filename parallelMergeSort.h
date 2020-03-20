@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: parallelMergeSort.h
+ * Description: Function prototypes for parallel merge sort
+ */
+
 #ifndef PARALLELMERGESORT_H
 #define PARALLELMERGESORT_H
 
@@ -9,9 +15,6 @@ using std::thread;
 
 void parallelMergeSort(long* arrayOfNumbers, const unsigned long leftIndex, 
                             const unsigned long rightIndex, const unsigned long maxThreads = 0);
-
-void parallelMergeSortHelper(long* arrayOfNumbers, const unsigned long leftIndex, 
-                                const unsigned long rightIndex);
 
 unsigned long determineMaxThreads(const unsigned long arraySize);
 

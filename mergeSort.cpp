@@ -1,3 +1,9 @@
+/*
+ * Author: Richard A. Kell
+ * File: mergeSort.cpp
+ * Description: Implementation of merge sort algorithm
+ */
+
 #include "mergeSort.h"
 
 void sequentialMergeSort(long* arrayOfNumbers, const unsigned long leftIndex, const unsigned long rightIndex)

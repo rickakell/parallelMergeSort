@@ -1,3 +1,10 @@
+/*
+ * Author: Richard A. Kell
+ * File: main.h
+ * Description: includes, usings, and template function definition needed
+ * for main.cpp file
+ */
+
 #ifndef MAIN_H
 #define MAIN_H
 

@@ -2,8 +2,6 @@
  * Author: Richard A. Kell
  * File: main.cpp
  * Date: Friday, March 20, 2020
- * Class: CS 5802 Parallel Programming and Algorithms
- * Instructor : Michael Gosnell
  * Description: Driver file for parallel merge sort
  */
 
