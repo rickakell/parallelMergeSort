@@ -13,7 +13,6 @@ void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex,
 void parallelMergeSortHelper(long* arrayOfNumbers, const unsigned long & leftIndex, 
                                 const unsigned long & rightIndex);
 
-//unsigned long determineMaxThreads(const unsigned long numberOfHardwareThreads, 
-//                                    const unsigned long arraySize);
+unsigned long determineMaxThreads(const unsigned long arraySize);
 
 #endif

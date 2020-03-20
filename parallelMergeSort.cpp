@@ -39,10 +39,7 @@ void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex,
     return;
 }
 
-/*
-unsigned long determineMaxThreads(const unsigned long numberOfHardwareThreads, 
-                                            const unsigned long arraySize)
+unsigned long determineMaxThreads(const unsigned long arraySize)
 {
     return arraySize / (pow(2, (log2(arraySize) / 2)) - 2);
 }
-*/
