@@ -9,7 +9,6 @@ using std::endl;
 void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex, 
                             const unsigned long & rightIndex, const unsigned long maxThreads)
 {
-    cout << maxThreads << endl;
     if(leftIndex < rightIndex)
     {
         unsigned long halfArrayIndex = leftIndex + (rightIndex - leftIndex) / 2;
@@ -26,7 +25,7 @@ void parallelMergeSort(long* arrayOfNumbers, const unsigned long & leftIndex,
         else if(maxThreads == 1)
         {
             thread leftHalfThread(parallelMergeSort, arrayOfNumbers, leftIndex, 
-                                    halfArrayIndex, (maxThreads - 2) / 2);
+                                    halfArrayIndex, 0);
             sequentialMergeSort(arrayOfNumbers, (halfArrayIndex + 1), rightIndex);
             leftHalfThread.join();
             sequentialMerge(arrayOfNumbers, leftIndex, halfArrayIndex, rightIndex);
