@@ -2,37 +2,39 @@
 #include "arrayFunctions.h"
 
 #include <ctime>
+#include <chrono>
+
+using std::chrono::high_resolution_clock;
+using std::chrono::duration;
 
 int main()
 {
     srand(time(NULL));
 
-    //const unsigned long SHORTMAXSIZE = 100;
-    const unsigned long LONGMAXSIZE = 1000000000;
+    const unsigned long LONGMAXSIZE = 350000000;
 
     const long RANDOMNUMBERMINIMUM = -10000;
     const long RANDOMNUMBERMAXIMUM = 10000;
+
+    // used to convert to seconds
+    const unsigned long CONVERSIONFACTOR = 1000000000;
 
     //unsigned long numberOfHardwareThreadsAvailable = thread::hardware_concurrency();
 
     unsigned long maxThreads = determineMaxThreads(LONGMAXSIZE);
 
-    //long* shortArray = new long[SHORTMAXSIZE];
     long* longArray = new long[LONGMAXSIZE]; // larger than ~1,000,000 will overflow the stack
 
-    //fillTestArrays(shortArray, SHORTMAXSIZE, RANDOMNUMBERMINIMUM, RANDOMNUMBERMAXIMUM);
     fillTestArrays(longArray, LONGMAXSIZE, RANDOMNUMBERMINIMUM, RANDOMNUMBERMAXIMUM);
     
-    // .26
-    // arrayIsSorted(shortArray, SHORTMAXSIZE);
-    // parallelMergeSort(shortArray, 0, SHORTMAXSIZE - 1, 14);
-    // arrayIsSorted(shortArray, SHORTMAXSIZE);
-
-    arrayIsSorted(longArray, LONGMAXSIZE);
+    auto start = high_resolution_clock::now();
     parallelMergeSort(longArray, 0, LONGMAXSIZE - 1, maxThreads);
-    arrayIsSorted(longArray, LONGMAXSIZE);
+    auto end = high_resolution_clock::now();
 
-    // delete[] shortArray;
+    auto runTime = (end - start) / CONVERSIONFACTOR;
+    cout << runTime.count() << 's' << endl;
+    cout << runTime.count() / 60 << 'm' << endl;
+
     delete[] longArray;
 
     return 0;
