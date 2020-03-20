@@ -1,17 +1,17 @@
 #include "arrayFunctions.h"
 
-void fillTestArrays(long* emptyArray, const long & size, const long minRandomNum, const long maxRandomNum)
+void fillTestArrays(long* emptyArray, const unsigned long & size, const long minRandomNum, const long maxRandomNum)
 {
-    for(long i = 0; i < size; ++i)
+    for(unsigned long i = 0; i < size; ++i)
     {
         emptyArray[i] = rand() % (maxRandomNum - minRandomNum) + minRandomNum;
     }
     return;
 }
 
-void printArray(long* array, const long & size)
+void printArray(long* array, const unsigned long & size)
 {
-    for(long i = 0; i < size; ++i)
+    for(unsigned long i = 0; i < size; ++i)
     {
         printf("%ld ", array[i]);
     }
@@ -19,10 +19,10 @@ void printArray(long* array, const long & size)
     return;
 }
 
-bool arrayIsSorted(long* array, const long & size)
+bool arrayIsSorted(long* array, const unsigned long & size)
 {
     bool sorted = true;
-    for(long i = 0; i < size - 1; ++i)
+    for(unsigned long i = 0; i < size - 1; ++i)
     {
         if(array[i] > array[i + 1])
         {

@@ -7,10 +7,10 @@
 using std::cout;
 using std::endl;
 
-void fillTestArrays(long* emptyArray, const long & size, const long minRandomNum, const long maxRandomNum);
+void fillTestArrays(long* emptyArray, const unsigned long & size, const long minRandomNum, const long maxRandomNum);
 
-void printArray(long* emptyArray, const long & size);
+void printArray(long* emptyArray, const unsigned long & size);
 
-bool arrayIsSorted(long* array, const long & size);
+bool arrayIsSorted(long* array, const unsigned long & size);
 
 #endif
