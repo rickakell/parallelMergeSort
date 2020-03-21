@@ -49,7 +49,7 @@ int main(int argc, char** argv)
     // create a dynamic array to avoid overflowing the stack
     long* longArray = new long[arraySize];
 
-    fillTestArrays(longArray, arraySize, randomNumberMinimum, randomNumberMaximum);
+    fillArray(longArray, arraySize, randomNumberMinimum, randomNumberMaximum);
     
     // timing
     auto start = high_resolution_clock::now();
