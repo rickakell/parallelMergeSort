@@ -6,11 +6,11 @@
 
 #include "arrayFunctions.h"
 
-void fillTestArrays(long* emptyArray, const unsigned long size, const long minRandomNum, const long maxRandomNum)
+void fillArray(long* array, const unsigned long size, const long minRandomNum, const long maxRandomNum)
 {
     for(unsigned long i = 0; i < size; ++i)
     {
-        emptyArray[i] = rand() % (maxRandomNum - minRandomNum) + minRandomNum;
+        array[i] = rand() % (maxRandomNum - minRandomNum) + minRandomNum;
     }
     return;
 }
