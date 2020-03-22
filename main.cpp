@@ -1,8 +1,14 @@
-/*
- * Author: Richard A. Kell
- * File: main.cpp
- * Date: Friday, March 20, 2020
- * Description: Driver file for parallel merge sort
+/**
+ * \author Richard A. Kell
+ * main.cpp
+ * \mainpage
+ * Driver file for parallel merge sort.\n
+ * Optionally takes user input for the size of
+ * the array to be generated and sorted, the
+ * maximum number of threads that can be spawned,
+ * the minimum random number that can be generated
+ * to fill the array, and the maximum random number
+ * that can be generated to fill the array.
  */
 
 #include "main.h"

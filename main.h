@@ -1,7 +1,7 @@
-/*
- * Author: Richard A. Kell
- * File: main.h
- * Description: includes, usings, and template function definition needed
+/**
+ * \author Richard A. Kell
+ * \file main.h
+ * \brief includes, usings, and template function definition needed
  * for main.cpp file
  */
 

@@ -1,7 +1,7 @@
-/*
- * Author: Richard A. Kell
- * File: parallelMergeSort.h
- * Description: Function prototypes for parallel merge sort
+/**
+ * \author Richard A. Kell
+ * \file parallelMergeSort.h
+ * \brief Function prototypes for parallel merge sort
  */
 
 #ifndef PARALLELMERGESORT_H

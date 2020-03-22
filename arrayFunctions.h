@@ -1,7 +1,7 @@
-/*
- * Author: Richard A. Kell
- * File: arrayFunctions.h
- * Description: Prototypes for array helper functions
+/**
+ * \author Richard A. Kell
+ * \file arrayFunctions.h
+ * \brief Prototypes for array helper functions
  */
 
 #ifndef ARRAYFUNCTIONS_H
@@ -41,14 +41,14 @@ void fillArray(long* array, const unsigned long size, const long minRandomNum, c
 void printArray(long* array, const unsigned long size);
 
 /**
- * \brief checks if \p array is a an array of sorted longs
+ * \brief checks if \p array is an array of sorted longs
  * \pre
  *    * none
  * \post
  *    * none
  * \param array an array of type long
  * \param size the size of \p array
- * \return a boolean that is true if \p array is sorted, false if it is unsorted
+ * \return a boolean that is true if \p array is sorted; false if it is unsorted
  */
 bool arrayIsSorted(long* array, const unsigned long size);
 

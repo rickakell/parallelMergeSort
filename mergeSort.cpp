@@ -1,7 +1,7 @@
-/*
- * Author: Richard A. Kell
- * File: mergeSort.cpp
- * Description: Implementation of merge sort algorithm
+/**
+ * \author Richard A. Kell
+ * \file mergeSort.cpp
+ * \brief Implementation of merge sort algorithm
  */
 
 #include "mergeSort.h"

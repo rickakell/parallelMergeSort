@@ -1,7 +1,7 @@
-/*
- * Author: Richard A. Kell
- * File: arrayFunctions.cpp
- * Description: Implementation file for array helper functions
+/**
+ * \author Richard A. Kell
+ * \file arrayFunctions.cpp
+ * \brief Implementation file for array helper functions
  */
 
 #include "arrayFunctions.h"
