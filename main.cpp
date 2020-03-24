@@ -1,7 +1,6 @@
 /**
  * \author Richard A. Kell
- * main.cpp
- * \mainpage
+ * \mainpage main.cpp
  * Driver file for parallel merge sort.\n
  * Optionally takes user input for the size of
  * the array to be generated and sorted, the
@@ -39,7 +38,7 @@ int main(int argc, char** argv)
         case 1:
             break;
         default:
-            cout << "Usage:\n./sort [arraySize] [maxThreads] [randomNumberMaximum] [randomNumberMinimum]" << endl;
+            cout << "Usage:\n./sort [arraySize] [maxThreads] [randomNumberMinimum] [randomNumberMaximum]" << endl;
             return 1;
             break;
     }
