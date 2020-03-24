@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "adfmps",
   1: "amp",
   2: "adfps",
-  3: "p"
+  3: "mp"
 };
 
 var indexSectionNames =
