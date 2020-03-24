@@ -4,4 +4,4 @@ An implementation of parallelized merge sort. The maximum number of threads that
 
 # Run Time Visualization
 
-![Alt text](./runTimeGraph.png?raw=true "test")
+![Alt text](./runTimeGraph.png?raw=true "run-time-visualization")
