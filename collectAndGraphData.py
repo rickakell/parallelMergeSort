@@ -1,5 +1,6 @@
 """
 # Author: Richard A. Kell
+
 # File: collectAndGraphData.py
 # Desc: Used to run parallel merge sort, collect
 # run times, and visualize the collected data
@@ -15,7 +16,7 @@ def main():
     numberOfTimesToRun = 3
     
     # run the executable and pass it array size and maxThreads
-    subprocessArgs = ["./sort", "1000000", ""]
+    subprocessArgs = ["./sort", "800000000", ""]
     
     # list to hold maxThreads for each run
     listOfMaxThreads = []
@@ -33,7 +34,7 @@ def main():
 
     # run for ~every level up to 1/2 the height of the binary tree
     # using the top 1/2 to prevent throwing error from too many threads 
-    for i in range(1, ceil(log2(int(subprocessArgs[1])) / 2) + 1):
+    for i in range(1, ceil(log2(int(subprocessArgs[1])) / 4)):
         # generate a maxThreads value that will matter algorithmically
         maxThreads = 2**i - 2
         print(f"running with {maxThreads} maxThreads...")
