@@ -32,9 +32,9 @@ def main():
     except subprocess.CalledProcessError:
         subprocess.run("make")
 
-    # run for ~every level up to 1/2 the height of the binary tree
-    # using the top 1/2 to prevent throwing error from too many threads 
-    for i in range(1, ceil(log2(int(subprocessArgs[1])) / 4)):
+    # run for ~every level up to 1/4 the height of the binary tree
+    # using the top 1/4 to prevent throwing error from too many threads 
+    for i in range(1, ceil(log2(int(subprocessArgs[1])) / 4) + 1):
         # generate a maxThreads value that will matter algorithmically
         maxThreads = 2**i - 2
         print(f"running with {maxThreads} maxThreads...")
@@ -44,13 +44,17 @@ def main():
             # run the compiled parallel merge sort binary and add the runtime output in seconds format
             sum += float(subprocess.check_output(subprocessArgs, encoding="utf-8").split('s')[0])
 
-        listOfMaxThreads.append(i)
+        listOfMaxThreads.append(str(maxThreads))
         averageRunTimes.append(sum / numberOfTimesToRun)
+
+    with open("collected_data.txt", 'w') as f:
+        f.write(f"listOfMaxThreads: {listOfMaxThreads}\n")
+        f.write(f"averageRunTimes: {averageRunTimes}\n")
 
     # plot, visualize, label, and export the data
     plt.scatter(listOfMaxThreads, averageRunTimes)
     plt.title("The Affect of Maximum Number of Threads on Run Time")
-    plt.xlabel("Level in binary tree")
+    plt.xlabel("Maximum Number of Threads")
     plt.ylabel("Time in Seconds")
     plt.savefig("runTimeGraph.png", bbox_inches="tight")
     plt.show()
