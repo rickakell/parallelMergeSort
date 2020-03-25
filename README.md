@@ -4,7 +4,7 @@ An implementation of parallelized merge sort. The maximum number of threads that
 
 ## Doxygen
 
-To see the doxygen generated documentation for this code, open up index.html in your browser of choice.
+To see the doxygen generated documentation for this code open index.html in your browser of choice.
 
 ## Run Time Visualization
 
